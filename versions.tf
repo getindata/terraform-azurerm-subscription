@@ -1,12 +1,14 @@
-# Example configuration of terraform providers
-
 terraform {
   required_version = ">= 0.13.0"
 
   required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = ">= 3.0"
+    }
     null = {
       source  = "hashicorp/null"
-      version = "3.1.1"
+      version = ">= 3.0"
     }
   }
 }
