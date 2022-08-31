@@ -57,42 +57,17 @@ resource "azurerm_monitor_diagnostic_setting" "this" {
   target_resource_id         = local.subscription_resource_id
   log_analytics_workspace_id = var.diagnostics_log_analytics_workspace_id
 
-  log {
-    category = "Administrative"
-    enabled  = true
-  }
-  log {
-    category = "Security"
-    enabled  = true
-  }
-  log {
-    category = "Alert"
-    enabled  = true
-  }
-  log {
-    category = "Policy"
-    enabled  = true
-  }
-  log {
-    category = "ResourceHealth"
-    enabled  = true
-  }
-  log {
-    category = "Autoscale"
-    enabled  = false
-  }
-  log {
-    category = "Recommendation"
-    enabled  = false
-  }
-  log {
-    category = "ServiceHealth"
-    enabled  = false
+  dynamic "log" {
+    for_each = local.diagnostics_categories_flag_map
+    content {
+      category = log.key
+      enabled  = log.value
+    }
   }
 }
 
 resource "null_resource" "refresh_access_token" {
-  count = module.this.enabled ? 1 : 0
+  count = module.this.enabled && var.refresh_token ? 1 : 0
 
   triggers = {
     subscription_id = local.subscription_id

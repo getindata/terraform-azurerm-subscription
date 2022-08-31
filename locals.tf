@@ -11,6 +11,16 @@ locals {
     }
   }
 
+  diagnostics_categories_flag_map = merge({
+    Administrative = true
+    Security       = true
+    Alert          = true
+    Policy         = true
+    Autoscale      = true
+    Recommendation = true
+    ServiceHealth  = true
+  }, var.diagnostics_categories_flag_map)
+
   alias_id                 = one(azurerm_subscription.this[*].id)
   subscription_resource_id = "/subscriptions/${one(azurerm_subscription.this[*].id)}"
   subscription_id          = one(azurerm_subscription.this[*].subscription_id)

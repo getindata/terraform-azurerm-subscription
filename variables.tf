@@ -19,10 +19,22 @@ variable "billing_enrollment_account_scope" {
   default     = null
 }
 
+variable "refresh_token" {
+  type        = bool
+  description = "Indicates wherever the refresh token of service principal should be refreshed after the subscription is created."
+  default     = true
+}
+
 variable "diagnostics_log_analytics_workspace_id" {
   type        = string
   default     = null
   description = "Resource ID of the log analytics workspace. Used for diagnostics logs and metrics"
+}
+
+variable "diagnostics_categories_flag_map" {
+  type        = map(bool)
+  default     = {}
+  description = "Map of Diagnostic categories. By default all of them are enabled. Ti disable particular category, add an entry with a `false` value"
 }
 
 variable "consumption_budgets" {
