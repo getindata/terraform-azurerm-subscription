@@ -17,11 +17,11 @@ This module manages Azure Subscription.
 
 ## USAGE
 ```hcl
-module "terraform_module_template" {
+module "test_subscription" {
   source  = "github.com/getindata/terraform-azurerm-subscription"
-  
+
+  name              = "Test Subscription"
   subscription_id   = "00000000-0000-0000-0000-000000000000"
-  subscription_name = "Test Subscription"
 }
 ```
 
