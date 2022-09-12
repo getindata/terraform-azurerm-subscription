@@ -22,7 +22,7 @@ locals {
   }, var.diagnostics_categories_flag_map)
 
   alias_id                 = one(azurerm_subscription.this[*].id)
-  subscription_resource_id = "/subscriptions/${one(azurerm_subscription.this[*].id)}"
+  subscription_resource_id = "/subscriptions/${one(azurerm_subscription.this[*].subscription_id)}"
   subscription_id          = one(azurerm_subscription.this[*].subscription_id)
   subscription_name        = one(azurerm_subscription.this[*].subscription_name)
 }
