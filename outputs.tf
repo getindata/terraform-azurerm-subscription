@@ -14,7 +14,7 @@ output "subscription_id" {
 }
 
 output "subscription_name" {
-  value       = local.subscription_resource_id
+  value       = local.subscription_name
   description = "Name of the subscription"
 }
 

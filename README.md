@@ -111,6 +111,7 @@ consumption_budgets = {
 |------|---------|
 | <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >= 3.0 |
 | <a name="provider_null"></a> [null](#provider\_null) | >= 3.0 |
+| <a name="provider_time"></a> [time](#provider\_time) | 0.8.0 |
 
 ## Requirements
 
@@ -119,6 +120,7 @@ consumption_budgets = {
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 3.0 |
 | <a name="requirement_null"></a> [null](#requirement\_null) | >= 3.0 |
+| <a name="requirement_time"></a> [time](#requirement\_time) | 0.8.0 |
 
 ## Resources
 
@@ -129,6 +131,7 @@ consumption_budgets = {
 | [azurerm_monitor_diagnostic_setting.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting) | resource |
 | [azurerm_subscription.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subscription) | resource |
 | [null_resource.refresh_access_token](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
+| [time_static.consumption_budget_start_date](https://registry.terraform.io/providers/hashicorp/time/0.8.0/docs/resources/static) | resource |
 | [azurerm_billing_enrollment_account_scope.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/billing_enrollment_account_scope) | data source |
 <!-- END_TF_DOCS -->
 
