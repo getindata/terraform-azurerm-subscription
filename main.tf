@@ -12,7 +12,7 @@ resource "azurerm_subscription" "this" {
   subscription_name = local.name_from_descriptor
   alias             = local.name_from_descriptor
 
-  billing_scope_id = one(data.azurerm_billing_enrollment_account_scope.this.*.id)
+  billing_scope_id = one(data.azurerm_billing_enrollment_account_scope.this[*].id)
 
   tags = module.this.tags
 }
